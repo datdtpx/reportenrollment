@@ -1,7 +1,7 @@
 <?php
 $capabilities = array(
 
-	'block/reportenrollment:myaddinstance' => array(
+	'block/th_enrollmentreport:myaddinstance' => array(
 		'captype' => 'write',
 		'contextlevel' => CONTEXT_SYSTEM,
 		'archetypes' => array(
@@ -11,7 +11,7 @@ $capabilities = array(
 		'clonepermissionsfrom' => 'moodle/my:manageblocks',
 	),
 
-	'block/reportenrollment:addinstance' => array(
+	'block/th_enrollmentreport:addinstance' => array(
 		'riskbitmask' => RISK_SPAM | RISK_XSS,
 
 		'captype' => 'write',
@@ -22,5 +22,15 @@ $capabilities = array(
 		),
 
 		'clonepermissionsfrom' => 'moodle/site:manageblocks',
+	),
+	'block/th_enrollmentreport:view' => array(
+		'riskbitmask' => RISK_SPAM | RISK_XSS,
+		'captype' => 'write',
+		'contextlevel' => CONTEXT_BLOCK,
+		'archetypes' => array(
+			'teacher' => CAP_ALLOW,
+			'editingteacher' => CAP_ALLOW,
+			'manager' => CAP_ALLOW,
+		),
 	),
 );
